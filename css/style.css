@@ -1,0 +1,81 @@
+*{
+   font-family: sans-serif;
+}
+
+body{
+   background-image: url(https://www.mobigaming.com/wp-content/uploads/2020/08/marvel-super-war-5w-1920x1080-1.jpg);
+   background-position: center;
+   padding: 10vh 0;
+}
+
+.container{
+   box-shadow: 15px 15px 10px;
+}
+
+#slider {
+   height: 70vh;
+   width: 85%;
+}
+
+.image-wrapper.show{
+   display: block;
+}
+
+.hide{
+   display: none;
+}
+
+.icone{ 
+   height: 2.5rem;
+   font-size: 2.5rem;
+   border-radius: 50%;
+   background-color: white;
+   cursor: pointer;
+   z-index: 2;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+#slider .arrow:hover {
+   opacity: 0.8;
+   transition: opacity 0s;
+}
+
+.arrow{
+   position: absolute;
+   right: 5%;
+   transform: translateX(-50%);
+   display: flex;
+   align-items: center;
+   opacity: 0;
+   transition: opacity 2s;
+}
+#next{
+   bottom: 2%;
+}
+
+#prev{
+   top: 2%;
+}
+
+#thumbnails{
+   height: 70vh;
+   width: 15%;
+   overflow: auto;
+}
+
+.thumbnail-wrapper{
+   height: 20%;
+}
+
+.brightness{
+   filter: brightness(0.3);
+}
+
+#scritte{
+   position: absolute;
+   bottom: 0;
+   right: 0;
+   background-color: rgba(0,0,0,0.5);
+}
