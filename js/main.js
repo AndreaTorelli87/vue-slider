@@ -3,6 +3,7 @@ const { createApp } = Vue
 createApp({
    data() {
       return {
+         variabileDiAppoggio: 0,
          index: 0,
          images: [
                   'img/1.webp',
@@ -43,15 +44,11 @@ createApp({
       selectImage(indice) {
          this.index = indice;
       },
-      prevImgTimer() {
-         setInterval(this.prevImage,3000);
-      },
       nextImgTimer() {
-         setInterval(this.nextImage,3000);
+         this.variabileDiAppoggio = setInterval(this.nextImage,3000);
       },
       stopImg() {
-         clearInterval(this.prevImgTimer);
-         clearInterval(this.nextImgTimer) 
+         clearInterval(this.variabileDiAppoggio);
       }
    },
    mounted() {

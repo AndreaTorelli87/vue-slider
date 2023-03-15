@@ -13,10 +13,10 @@
     <body class="m-0">
         <div id="app">
             <main>
-                <div class="container d-flex p-0 position-relative">
+                <div @mouseover="stopImg" @mouseout="nextImgTimer" class="container d-flex p-0 position-relative">
                     <div id="slider">
-                        <div id="images" class="h-100">
-                            <div  class="image-wrapper h-100 text-white text-end position-relative">
+                        <div class="h-100">
+                            <div class="image-wrapper h-100 text-white text-end position-relative">
                                 <img class="image w-100 h-100 object-fit-cover" :src="images[index]">
                                 <div id="scritte" class="rounded-3 p-2 m-3">
                                    <h2 class="fw-bolder">{{titles[index]}}</h2>
@@ -24,19 +24,14 @@
                                 </div>
                             </div>
                         </div>
-                        <div @click="nextImage" id="next" class="arrow icone"><i class="bi bi-caret-down"></i></div>
-                        <div @click="prevImage" id="prev" class="arrow icone"><i class="bi bi-caret-up"></i></div>
+                        <div @click="nextImage" class="arrow icone next"><i class="bi bi-caret-down"></i></div>
+                        <div @click="prevImage" class="arrow icone prev"><i class="bi bi-caret-up"></i></div>
                     </div>
                     <div id="thumbnails">
                         <div v-for="(image, indice) in images" class="thumbnail-wrapper" @click="selectImage(indice)" :class="(index == indice)?'':'brightness'">
                             <img class="image w-100 h-100 object-fit-cover" :src="image">
                         </div>
                     </div>
-                </div>
-                <div class="d-flex justify-content-center my-3">
-                    <div @click="prevImgTimer" id="left" class="m-2 icone"><i class="bi bi-caret-left"></i></div>
-                    <div @click="stopImg" id="stop" class="m-2 icone"><i class="bi bi-sign-stop-fill"></i></div>
-                    <div @click="nextImgTimer" id="right" class="m-2 icone"><i class="bi bi-caret-right"></i></div>
                 </div>
             </main>
         </div>
