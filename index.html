@@ -17,19 +17,19 @@
                     <div id="slider">
                         <div class="h-100">
                             <div class="image-wrapper h-100 text-white text-end position-relative">
-                                <img class="image w-100 h-100 object-fit-cover" :src="images[index]">
+                                <img class="image w-100 h-100 object-fit-cover" :src="images[index].image">
                                 <div id="scritte" class="rounded-3 p-2 m-3">
-                                   <h2 class="fw-bolder">{{titles[index]}}</h2>
-                                   <p>{{texts[index]}}</p>
+                                   <h2 class="fw-bolder">{{images[index].title}}</h2>
+                                   <p>{{images[index].text}}</p>
                                 </div>
                             </div>
                         </div>
                         <div @click="nextImage" class="arrow icone next"><i class="bi bi-caret-down"></i></div>
                         <div @click="prevImage" class="arrow icone prev"><i class="bi bi-caret-up"></i></div>
                     </div>
-                    <div id="thumbnails">
-                        <div v-for="(image, indice) in images" class="thumbnail-wrapper" @click="selectImage(indice)" :class="(index == indice)?'':'brightness'">
-                            <img class="image w-100 h-100 object-fit-cover" :src="image">
+                    <div id="thumbnails" class="overflow-scroll">
+                        <div v-for="(images, indice) in images" class="thumbnail-wrapper" @click="selectImage(indice)" :class="(index == indice)?'':'brightness'">
+                            <img class="image w-100 h-100 object-fit-cover" :src="images.image">
                         </div>
                     </div>
                 </div>
